@@ -38,7 +38,7 @@ jobs:
         id: set_branch
         run: echo "::set-output name=branch::$(git merge-base --is-ancestor $tag HEAD)";
       - name: Print out branch
-      - run: echo "output=${{ steps.set_branch.outputs.branch }}"
+        run: echo "output=${{ steps.set_branch.outputs.branch }}"
       - name: Create release
         if: contains(steps.set_branch.outputs.branch,  'main')
         uses: softprops/action-gh-release@v1
