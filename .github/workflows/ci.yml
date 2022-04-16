@@ -36,7 +36,7 @@ jobs:
           fetch-depth: 0
       - name: Set branch
         id: set_branch
-        run: echo "::set-output name=branch::main";
+        run: echo "::set-output name=branch::main"
       - name: Print out branch
         run: echo "output=${{ steps.set_branch.outputs.branch }}"
       - name: Create release
